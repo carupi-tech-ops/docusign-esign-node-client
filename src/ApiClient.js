@@ -914,6 +914,17 @@
     return sendJWTTokenRequest(assertion, this.oAuthBasePath, callback);
   };
 
+  //DF
+  const results = await requestJWTUserToken({
+    clientId: xxx,
+    userId: xxx,
+    scopes: signature,
+    rsaPrivateKey: xxx,
+    expiresIn: xxx,
+    callback: xxx
+
+  })
+
   exports.prototype.requestJWTApplicationToken = function(clientId, scopes, rsaPrivateKey, expiresIn, callback) {
     var privateKey = rsaPrivateKey,
       assertion = generateAndSignJWTAssertion(clientId, scopes, privateKey, this.getOAuthBasePath(), expiresIn);
